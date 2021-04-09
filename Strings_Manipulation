@@ -1,0 +1,45 @@
+using namespace std;
+
+//STRINGS
+#include <string>
+
+//STRING COMPARE
+    //string::compare() returns an int:
+    //equal to zero if s and t are equal,
+    //less than zero if s is less than t,
+    //greater than zero if s is greater than t.
+	  if (s.compare(t)) then …
+    
+//PRINTS POSITION VALUE FROM STRING OR VECTOR:
+    String str;
+    Cout << str.at(i); //prints position i from the string str
+
+//STRING TO INT:
+    int stoi (const string&  str);
+
+//READING PART OF A STRING
+    //Substring read parts of a string: str.substr (starting_Pos,length)
+    std::string str="We think in generalities, but we live in details.";
+    std::string str2 = str.substr (3,5);     // "think"
+
+//REMOVE SPACES FROM STRING
+    std::string str1 = "Text with some   spaces";
+    str1.erase(std::remove(str1.begin(), str1.end(), ' '), str1.end());
+    //Output: Textwithsomespaces
+
+//CONVERTING STRING OF NUMBERS SEPARATED BY SPACES INTO AN ARRAY OF INT:
+        string LINE;
+        std::stringstream in(LINE);
+        std::vector<int> LINEint;
+        int temp;
+        while(in >> temp) {
+        LINEint.push_back(temp);
+        }
+        for (int j=0; j<W; j++) {
+            Matrix[j][i] = LINEint[j];
+        }
+ 
+
+
+
+
