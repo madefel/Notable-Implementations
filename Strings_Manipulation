@@ -39,7 +39,9 @@ using namespace std;
             Matrix[j][i] = LINEint[j];
         }
  
-
-
+//CHECK IF STRING IS EMPTY
+	//If string is declared but not assigned, mystring.empty() is true.
+	std::string mystring;
+	if (mystring.empty()) { //do stuff}
 
 
