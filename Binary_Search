@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+
+#include<bits/stdc++.h> 
+using namespace std;
+
+int main() {
+    int x = 20; //value you want to search
+    vector<int> array = {10, 15, 20, 25, 30};
+    
+    if (binary_search(array.begin(), array.end(), x)) {
+      cout << "Value found in position: " << lower_bound(array.begin(), array.end(), x) - array.begin();
+      cout << endl;
+    }
+    else cout << "Value not found" << endl;
+    
+    return 0;
+}
