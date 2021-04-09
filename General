@@ -1,0 +1,4 @@
+using namespace std;
+
+//INITIALISE ARRAY
+    int array [H][W]= {}; //initialises array to 0s in both dimensions
