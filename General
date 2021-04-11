@@ -1,8 +1,9 @@
 using namespace std;
 
 //INITIALISE ARRAY
-    int array [H][W] = {}; //initialises array to 0s in both dimensions
+    int array [H][W] = {}; //initialises array to 0s in both dimensions where H and W are hard-coded numbers.
     int array[] = {1, 3, 6, 4}; //initialises array to those numbers
+    //If your array size is a variable, you need to run a for loop to initialise it
     
 //SIZE OF ARRAY (LENGTH)
     int arrSize = sizeof(array) / sizeof(array[0]);
