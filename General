@@ -7,5 +7,12 @@ using namespace std;
     
 //SIZE OF ARRAY (LENGTH)
     int arrSize = sizeof(array) / sizeof(array[0]);
-//SIZE OF VECTOR (LENGTH
+
+//SIZE OF VECTOR LENGTH
     vector.size();
+    
+//DEFINE FUNCTION WITH ARRAY:
+    //Always uses  pointers as arguments and include its size
+    void Split_Array(int *X, int arrsize, int *A, int SizeA, int *B, int SizeB)
+//CALL FUNCTION WITH ARRAY:
+    Split_Array(X, arrsize, A, SizeA, B, SizeB);
