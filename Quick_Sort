@@ -32,8 +32,8 @@ int CreatePartition(int *A, int Size, int LeftIndex, int RightIndex) {
   
   int PartitionSize = RightIndex - LeftIndex + 1; //+1 is needed because the size is a number which starts from 1, while the array starts from 0
   
-  //int PivotIndex = rand() % PartitionSize;
-  int PivotIndex = LeftIndex;
+  int PivotIndex = rand() % PartitionSize + LeftIndex;
+  //int PivotIndex = LeftIndex;
 
   cerr << "Pivot number is: " << A[PivotIndex] << endl;
   
@@ -79,7 +79,7 @@ void QuickSort(int *A, int Size, int LeftIndex, int RightIndex) {
 }
 
 int main() {
-  int X[] = {5, 7, 1, 2, 3, 6, 9, 8};
+  int X[] = {5, 7, 1, 2, 3, 6, 9, 8, 8, 10, 6};
   int Size = sizeof(X)/sizeof(X[0]);
 
   QuickSort(X, Size, 0, Size-1);
