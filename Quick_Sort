@@ -1,0 +1,95 @@
+
+/*** QUICK SORT IMPLEMENTATION ***/
+
+#include <iostream>
+
+using namespace std;
+
+
+//Swaps the First and the Second values
+void Swap(int *First, int *Second) {
+  int Temp = 0;
+
+  Temp = *First;
+  *First = *Second;
+  *Second = Temp;
+
+  cerr << "Swap executed on " << *First << " and " << *Second << endl;
+}
+
+
+//CreatePartition partitions the portion of A[] included between LeftIndex and RightIndex, then returns the partition index
+int CreatePartition(int *A, int Size, int LeftIndex, int RightIndex) {
+  cerr << "CreatePartition launched; LeftIndex: " << LeftIndex << "; RightIndex: " << RightIndex << endl;
+
+  if (RightIndex < LeftIndex) {
+    cerr << "RightIndex < LeftIndex. Improper call" << endl;
+    exit(0);
+  }
+
+  int PartitionIndex = LeftIndex;
+  int j = LeftIndex; //j indicates which position of the array I have reached in my array visit
+  
+  int PartitionSize = RightIndex - LeftIndex + 1; //+1 is needed because the size is a number which starts from 1, while the array starts from 0
+  
+  //int PivotIndex = rand() % PartitionSize;
+  int PivotIndex = LeftIndex;
+
+  cerr << "Pivot number is: " << A[PivotIndex] << endl;
+  
+  Swap(&A[LeftIndex], &A[PivotIndex]);
+
+  int Pivot = A[LeftIndex];
+
+  while (j<RightIndex) {
+
+    if ( A[j+1] < Pivot ) {
+      cerr << "Found element smaller than pivot " << Pivot << " in position" << j+1 << "; Swapping " << A[PartitionIndex+1] << " and " << A[j+1] << endl;
+      
+      Swap(&A[PartitionIndex+1] , &A[j+1]);   
+      PartitionIndex++;
+    }
+  
+    j++;
+  }
+
+  Swap(&A[LeftIndex], &A[PartitionIndex]);
+    
+  
+  return PartitionIndex;
+}
+
+
+//A[] is the Array to be sorted, Size is its size, LeftIndex and RightIndex are the start and end of the partition to be considered respectively
+void QuickSort(int *A, int Size, int LeftIndex, int RightIndex) {
+  
+  if (RightIndex < LeftIndex) {
+    cerr << "RightIndex < LeftIndex. Improper call" << endl;
+    return;
+  }
+
+  int PartitionIndex; //PartitionIndex is the index indicating where is the partition between values lower than pivot and higher than pivot
+  
+  PartitionIndex = CreatePartition(A, Size, LeftIndex, RightIndex); 
+
+  if ( (LeftIndex < PartitionIndex-1) || (RightIndex > PartitionIndex+1) ) {
+    QuickSort(A, Size, LeftIndex, PartitionIndex-1);
+    QuickSort(A, Size, PartitionIndex+1, RightIndex);
+  }
+}
+
+int main() {
+  int X[] = {5, 7, 1, 2, 3, 6, 9, 8};
+  int Size = sizeof(X)/sizeof(X[0]);
+
+  QuickSort(X, Size, 0, Size-1);
+  
+  cout << endl << "The ordered array is: ";
+  for (int i=0; i<Size; i++) {
+    cout << X[i] << ", ";
+  }
+  cout << endl;
+  
+
+  return 0;
+}
