@@ -1,0 +1,7 @@
+//EXAMPLE OF & AND *
+  void Swap(int *First, int *Second) {
+    int Temp = *First;
+    *First = *Second;
+    *Second = Temp;
+  }
+  Swap(&A[LeftIndex], &A[PivotIndex]);
