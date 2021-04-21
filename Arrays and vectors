@@ -7,12 +7,36 @@ using namespace std;
     
 //SIZE OF ARRAY (LENGTH)
     int arrSize = sizeof(array) / sizeof(array[0]);
+    
+    
+//VECTORS FUNCTIONS 
+    URL: https://www.geeksforgeeks.org/vector-in-cpp-stl/
+    
+    push_back() – It push the elements into a vector from the back
+        v.push_back(15); // inserts 15 to the last position
+        int n = v.size();
+        cout << "\nThe last element is: " << v[n - 1];
 
-//SIZE OF VECTOR LENGTH
-    vector.size();
+    pop_back() – It is used to pop or remove elements from a vector from the back.
+        v.pop_back(); // removes last element
+    
+    insert() – It inserts new elements before the element at the specified position
+        v.insert(v.begin(), 5);   // inserts 5 at the beginning
+    
+    erase() – It is used to remove elements from a container from the specified position or range.
+        v.erase(v.begin());  // removes the first element
 
-//VECTOR FUNCTIONS
-    https://www.geeksforgeeks.org/vector-in-cpp-stl/
+    vector.size(); //indicates the vector length
+
+//ADDRESS POSITION IN VECTOR
+    vector.at(i) = 1;
+    //Can both read and write within current vector size. If the vector needs size increase, then use Vector.push_back(value)
+    
+//SCAN OR PRINT VALUES IN VECTOR        
+        cout << "\nThe vector elements are: ";
+        for (int i = 0; i < v.size(); i++)
+            cout << v[i] << " ";
+
     
 //DEFINE FUNCTION WITH ARRAY:
     //Always uses  pointers as arguments and include its size
