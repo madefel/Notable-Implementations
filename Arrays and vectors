@@ -10,6 +10,9 @@ using namespace std;
 
 //SIZE OF VECTOR LENGTH
     vector.size();
+
+//VECTOR FUNCTIONS
+    https://www.geeksforgeeks.org/vector-in-cpp-stl/
     
 //DEFINE FUNCTION WITH ARRAY:
     //Always uses  pointers as arguments and include its size
